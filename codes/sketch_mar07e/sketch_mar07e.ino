@@ -23,7 +23,7 @@ int pos_lM= 130;
 int pos_lB= 0;  
 
 int ft,fn,fm,fl;
-int st[50],sn[50],sm[50],sl[50];
+int St[50],Sn[50],Sm[50],Sl[50];
 
 int t,n,m,l; 
 
@@ -57,7 +57,7 @@ for(i=0;i<50;i++)
 {
   St[i]=analogRead(A1);
   delay(10);
-  ft=ft+st[i];
+  ft=ft+St[i];
   }
 for(i=0;i<50;i++)
 {
@@ -67,9 +67,9 @@ for(i=0;i<50;i++)
   }
 for(i=0;i<50;i++)
 {
-  fm[i]=analogRead(A3);
+  Sm[i]=analogRead(A3);
   delay(10);
-  fm=fm+sm[i];
+  fm=fm+Sm[i];
   }
 for(i=0;i<50;i++)
 {
@@ -83,22 +83,22 @@ fn=fn/50;
 fm=fm/50;
 fl=fl/50;
 
-fn=map(fn,0,130);
-fm=map(fm,10,180);
+fn=map(720,750,0,130,fn);
+fm=map(590,820,10,180,fm);
 
 //rm
-while(pos_rM<70) {
+while(pos_rM<fn) {
 myservo_rM.write(pos_rM);
 pos_rM=pos_rM+1;
 delay(10);
 }
 //lm
-while(pos_lM>75) {
+while(pos_lM>fm) {
 myservo_lM.write(pos_lM);
 pos_lM=pos_lM-1;
 delay(10);
 }
 
-Serial.println("not working");
+Serial.println("not wroking");
 
 }
