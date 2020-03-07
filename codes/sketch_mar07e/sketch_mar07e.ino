@@ -111,5 +111,14 @@ delay(10);
 }  
 }
 //Serial.println("not wroking");
+update_eeprom();
+}
 
+void update_eeprom(){
+  EEPROM.write(prev_add1, pos_rE);
+  EEPROM.write(prev_add2, pos_rM);
+  EEPROM.write(prev_add3, pos_rB);
+  EEPROM.write(prev_add4, pos_lE);
+  EEPROM.write(prev_add5, pos_lM);
+  EEPROM.write(prev_add6, pos_lB);  
 }
