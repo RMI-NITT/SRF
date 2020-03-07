@@ -86,19 +86,41 @@ fl=fl/50;
 fn=map(720,750,0,130,fn);
 fm=map(590,820,10,180,fm);
 
-//rm
+if (fn>pos_rM)
+{//rm
 while(pos_rM<fn) {
 myservo_rM.write(pos_rM);
 pos_rM=pos_rM+1;
 delay(10);
 }
+}
+else
+{
+//rm
+while(pos_rM>fn) {
+myservo_rM.write(pos_rM);
+pos_rM=pos_rM-1;
+delay(10);  
+}
+}
+if (fm<pos_lM)
+{
 //lm
 while(pos_lM>fm) {
 myservo_lM.write(pos_lM);
 pos_lM=pos_lM-1;
 delay(10);
 }
-
-Serial.println("not wroking");
+}
+else 
+{
+//lm
+while(pos_lM<fm) {
+myservo_lM.write(pos_lM);
+pos_lM=pos_lM+1;
+delay(10);
+}  
+}
+//Serial.println("not wroking");
 
 }
