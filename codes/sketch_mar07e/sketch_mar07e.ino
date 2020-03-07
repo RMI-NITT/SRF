@@ -99,6 +99,6 @@ pos_lM=pos_lM-1;
 delay(10);
 }
 
-Serial.println("not wroking");
+Serial.println("not working");
 
 }
