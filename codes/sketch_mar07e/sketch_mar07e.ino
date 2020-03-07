@@ -55,7 +55,7 @@ int i=0;
 
 for(i=0;i<50;i++)
 {
-  ft[i]=analogRead(A1);
+  St[i]=analogRead(A1);
   delay(10);
   ft=ft+st[i];
   }
@@ -83,9 +83,21 @@ fn=fn/50;
 fm=fm/50;
 fl=fl/50;
 
+fn=map(fn,0,130);
+fm=map(fm,10,180);
 
-
-pos_rM = map()
+//rm
+while(pos_rM<70) {
+myservo_rM.write(pos_rM);
+pos_rM=pos_rM+1;
+delay(10);
+}
+//lm
+while(pos_lM>75) {
+myservo_lM.write(pos_lM);
+pos_lM=pos_lM-1;
+delay(10);
+}
 
 Serial.println("not wroking");
 
