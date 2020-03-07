@@ -56,27 +56,16 @@ int i=0;
 for(i=0;i<50;i++)
 {
   St[i]=analogRead(A1);
+  Sl[i]=analogRead(A4);
+  Sn[i]=analogRead(A2);
+  Sm[i]=analogRead(A3);
+
   delay(10);
   ft=ft+St[i];
-  }
-for(i=0;i<50;i++)
-{
-  Sn[i]=analogRead(A2);
-  delay(10);
   fn=fn+Sn[i];
-  }
-for(i=0;i<50;i++)
-{
-  Sm[i]=analogRead(A3);
-  delay(10);
-  fm=fm+Sm[i];
-  }
-for(i=0;i<50;i++)
-{
-  Sl[i]=analogRead(A4);
-  delay(10);
+  fm=fm+Sm[i]; 
   fl=fl+Sl[i];
-  }
+}
 
 ft=ft/50;
 fn=fn/50;
