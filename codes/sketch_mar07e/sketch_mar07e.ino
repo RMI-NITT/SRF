@@ -87,6 +87,6 @@ fl=fl/50;
 
 pos_rM = map()
 
-Serial.println("not wroking");
+Serial.println("not working");
 
 }
