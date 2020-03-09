@@ -62,7 +62,6 @@ for(i=0;i<25;i++)
   Sn[i]=analogRead(A2);
   Sm[i]=analogRead(A3);
 
-  //delay(10);
   ft=ft+St[i];
   fn=fn+Sn[i];
   fm=fm+Sm[i]; 
@@ -74,84 +73,70 @@ fn=fn/25;
 fm=fm/25;
 fl=fl/25;
 
-n=map(fn,600,800,40,130);
-m=map(fm,590,820,10,120);
-t=map(ft,400,1100,50,180);
-l=map(fl,360,1000,0,180);
-
-if (fn>pos_rM)
-{
-//rm
-while(pos_rM<fn) {
-myservo_rM.write(pos_rM);
-pos_rM=pos_rM+1;
-//delay(10);
-}
-}
-else
-{
-//rm
-while(pos_rM>fn) {
-myservo_rM.write(pos_rM);
-pos_rM=pos_rM-1;
-//delay(10);  
-}
-}
-if (fm<pos_lM)
-{
-//lm
-while(pos_lM>fm) {
-myservo_lM.write(pos_lM);
-pos_lM=pos_lM-1;
-//delay(10);
-}
-}
-else 
-{
-//lm
-while(pos_lM<fm) {
-myservo_lM.write(pos_lM);
-pos_lM=pos_lM+1;
-//delay(10);
-}  
-if (ft<pos_rB)
+if (ft<690)
 {
 //rb
-while(pos_rB>ft) {
-myservo_rB.write(pos_rB);
-pos_rB=pos_rB-1;
-//delay(10);
-}
-}
-else
-{
-//rb
-while(pos_rB<ft) {
+while(pos_rB<100) {
 myservo_rB.write(pos_rB);
 pos_rB=pos_rB+1;
-//delay(10);
 }
 }
-if (pos_lB>fl)
+else
+{
+//rb
+while(pos_rB>60) {
+myservo_rB.write(pos_rB);
+pos_rB=pos_rB-1;
+}
+}
+if (fn<590)
+{
+//rm
+while(pos_rM>20) {
+myservo_rM.write(pos_rM);
+pos_rM=pos_rM-1;
+}
+}
+else
+{
+//rm
+while(pos_rM<70) {
+myservo_rM.write(pos_rM);
+pos_rM=pos_rM+1;
+}
+}
+if (fl<950)
 {
 //lb
-while(pos_lB>fl) {
+while(pos_lB>0) {
 myservo_lB.write(pos_lB);
 pos_lB=pos_lB-1;
-//delay(10);
 }
 }
 else
 {
 //lb
-while(pos_lB<fl) {
+while(pos_lB<30) {
 myservo_lB.write(pos_lB);
 pos_lB=pos_lB+1;
-//delay(10);
 }
 }
+if (fm<770)
+{
+//lm
+while(pos_lM<130) {
+myservo_lM.write(pos_lM);
+pos_lM=pos_lM+1;
 }
-
+}
+else
+{
+//lm
+while(pos_lM>75) {
+myservo_lM.write(pos_lM);
+pos_lM=pos_lM-1;
+} 
+}
 //Serial.println("not wroking");
 
 update_eeprom();
