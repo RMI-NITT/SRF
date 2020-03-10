@@ -34,4 +34,31 @@ fl=fl/50; //300 +-
 
 Serial.println(ft);
 
+//1 – clos.e
+if ((fl > 0) && (fm < 0) && (fn > 0) && (ft < 0)){
+
+Serial.println("clos.e");
+}
+//2 – ope.n 
+if((fl > 0) && (fm > 0) && (fn < 0) && (ft < 0)){
+
+Serial.println("ope.n");
+}
+//3 – hold up
+if((fl > 0) && (fm > 0) && (fn > 0) && (ft < 0)){
+
+Serial.println("hold up");
+
+}
+//5 – one up and down hold 
+if((fl > 0) && (fm > 0) && (fn > 0) && (ft > 0)){
+
+Serial.println("one up and down hold");
+}
+//6 – normal 
+if((fl > 0) && (fm < 0) && (fn < 0) && (ft < 0)){
+
+Serial.println("normal");  
+}
+
 }
