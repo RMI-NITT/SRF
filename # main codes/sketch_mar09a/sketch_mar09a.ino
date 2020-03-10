@@ -73,56 +73,63 @@ m=fm/25;
 l=fl/25;
 
 //1 – clos.e
-if (l < 610 && m < 780 && n > 710&& t < 690){
+if ((l < 610) && (m < 780) && (n > 690) && (t < 650)){
 pos_rE=180;
 pos_rM=70;
 pos_rB=50;
 pos_lE=100;
 pos_lM=80;
 pos_lB=130;
+Serial.println("clos.e");
 }
 //2 – ope.n 
-if(l < 610 && m > 810&& n < 660 && t < 690){
+if((l < 610) && (m > 760) && (n < 690) && (t < 650)){
 pos_rE=180;
 pos_rM=0;
 pos_rB=110;
 pos_lE=120;
 pos_lM=150;
 pos_lB=0;  
+Serial.println("ope.n");
 }
 //3 – hold up
-if(l < 610 && m > 810&& n > 710&& t < 690){
+if((l < 610) && (m > 760) && (n > 690) && (t < 650)){
 pos_rE=150;
 pos_rM=80;
 pos_rB=180;
 pos_lE=70;
 pos_lM=80;
 pos_lB=40;  
+Serial.println("hold up");
+
 }
 //5 – one up and down hold 
-if(l < 610 && m > 810&& n > 710&& t > 710){
+if((l < 610) && (m > 760) && (n > 690) && (t > 650)){
 pos_rE=180;
 pos_rM=20;
 pos_rB=180;
 pos_lE=90;
 pos_lM=80;
 pos_lB=130;  
+Serial.println("one up and down hold");
 }
 //6 – normal 
-if(l < 610 && m < 780 && n < 660 && t < 690){
+if((l < 610) && (m < 760) && (n < 690) && (t < 650)){
 pos_rE=180;
 pos_rM=40;
 pos_rB=70;
 pos_lE=110;
 pos_lM=120;
-pos_lB=20;  
-}
+pos_lB=20;
+Serial.println("normal");  
+}/*
 myservo_rE.write(pos_rE); 
 myservo_rM.write(pos_rM); 
 myservo_rB.write(pos_rB);
 myservo_lE.write(pos_lE);  
 myservo_lM.write(pos_lM); 
 myservo_lB.write(pos_lB);
+*/
 delay(100);
 update_eeprom();}
 
