@@ -62,3 +62,47 @@ void update_eeprom(){
   EEPROM.write(prev_add6, pos_lB);
 
 }
+/*
+#1 – close 
+l < 610 && m < 780 && n > 710&& t < 690
+pos_rE=180;
+pos_rM=70;
+pos_rB=50;
+pos_lE=100;
+pos_lM=80;
+pos_lB=130;
+#2 – open 
+l < 610 && m > 810&& n < 660 && t < 690
+pos_rE=180;
+pos_rM=0;
+pos_rB=110;
+pos_lE=120;
+pos_lM=150;
+pos_lB=0;
+#3 – hold up
+l < 610 && m > 810&& n > 710&& t < 690
+pos_rE=150;
+pos_rM=80;
+pos_rB=180;
+pos_lE=70;
+pos_lM=80;
+pos_lB=40;
+#4 – freeze
+l > 660
+#5 – one up and down hold 
+l < 610 && m > 810&& n > 710&& t > 710
+pos_rE=180;
+pos_rM=20;
+pos_rB=180;
+pos_lE=90;
+pos_lM=80;
+pos_lB=130;
+#6 – normal 
+l < 610 && m < 780 && n < 660 && t < 690
+pos_rE=180;
+pos_rM=40;
+pos_rB=70;
+pos_lE=110;
+pos_lM=120;
+pos_lB=20;
+ */
